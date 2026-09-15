@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Menu {
 	private String title;
 	private List<String> options;
-	private ArrayList<Cliente> clientes = new ArrayList<>();
 
 	public Menu(List<String> options) {
 		this.title = "Menu";
@@ -41,24 +40,7 @@ public class Menu {
 				op=0;
 			}
 
-			if (op == 2) {
-				cadastrarCliente();
-			}
-
 		}
 		return op;
-	}
-
-	public void cadastrarCliente() {
-		System.out.println("Digite o nome do cliente: ");
-		Scanner s = new Scanner(System.in);
-		String nome = s.nextLine();
-		System.out.println("Digite o CPF do cliente: ");
-		Scanner s2 = new Scanner(System.in);
-		String cpf = s2.nextLine();
-		Cliente cliente = new Cliente(nome, cpf);
-		clientes.add(cliente);
-		System.out.println("Sucesso ao cadastrar cliente!");
-
 	}
 }
